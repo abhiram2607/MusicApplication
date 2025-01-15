@@ -1,0 +1,66 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #141e30, #243b55);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.welcome-container {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo img {
+    width: 120px;
+    animation: pulse 2s infinite;
+}
+
+.welcome-title {
+    color: #ecf0f1;
+    font-size: 2.5rem;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeInText 2.5s ease-in-out forwards;
+}
+
+.enter-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    background-color: #ecf0f1;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.enter-button:hover {
+    transform: scale(1.05);
+    background-color: #bdc3c7;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+

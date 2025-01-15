@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hunch Music Player</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Playlist</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="feedbackButton">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="copyrightInfo">Copyright</a>
+                </li>
+            </ul>
+            <div class="form-check ml-3">
+                <input class="form-check-input" type="checkbox" id="nightModeToggle">
+                <label class="form-check-label" for="nightModeToggle">Night Mode</label>
+            </div>
+            <div class="form-check ml-3">
+                <input class="form-check-input" type="checkbox" id="drivingModeToggle">
+                <label class="form-check-label" for="drivingModeToggle">Driving Mode</label>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-container">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img id="albumArt" src="default-album-art.jpg" class="img-fluid rounded" alt="Album Art">
+            </div>
+            <div class="col-md-8">
+                <div id="player-controls" class="mb-3">
+                    <h2 id="trackTitle">Track Title</h2>
+                    <h4 id="trackArtist">Track Artist</h4>
+                    <div class="btn-group" role="group">
+                        <button id="prevButton" class="btn btn-primary"><i class="fas fa-backward"></i></button>
+                        <button id="playPauseButton" class="btn btn-primary"><i class="fas fa-play"></i></button>
+                        <button id="nextButton" class="btn btn-primary"><i class="fas fa-forward"></i></button>
+                    </div>
+                    <input type="range" id="progressBar" class="custom-range mt-3" min="0" max="100" value="0">
+                    <input type="range" id="volumeBar" class="custom-range mt-3" min="0" max="100" value="100">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <div class="list-group" id="playlist"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="feedbackModalLabel">Submit Feedback</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedbackForm">
+                        <div class="form-group">
+                            <label for="feedbackText">Feedback</label>
+                            <textarea class="form-control" id="feedbackText" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copyright Modal -->
+    <div class="modal fade" id="copyrightModal" tabindex="-1" role="dialog" aria-labelledby="copyrightModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="copyrightModalLabel">Copyright Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Copyright information goes here -->
+                    <p>&copy; 2023 Your Music Player. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Trimming -->
+    <div class="container mt-3">
+        <h3>Trim Audio</h3>
+        <div class="form-row">
+            <div class="col">
+                <input type="number" class="form-control" id="startTime" placeholder="Start Time (seconds)">
+            </div>
+            <div class="col">
+                <input type="number" class="form-control" id="endTime" placeholder="End Time (seconds)">
+            </div>
+            <div class="col">
+                <button id="trimButton" class="btn btn-primary">Trim</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
